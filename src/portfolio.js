@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './portfolio.css';
 
-const mockItems = [
+export const mockItems = [
   {
     id: 1,
     name: 'Project Alpha',

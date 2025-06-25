@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-route
 import './App.css';
 import HomePage from './HomePage';
 import Portfolio from './portfolio';
+import './fonts.css';
+import './variables.css';
 
 function App() {
   return (

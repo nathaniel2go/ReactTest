@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'TF2'; /* You can name this whatever you want */
+    src: url('/fonts/TF2.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TF2bold'; /* For another font if you have one */
+    src: url('/fonts/TF2bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TF2thin'; /* You can name this whatever you want */
+    src: url('/fonts/TF2thin.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+

@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './HomePage.css';
 import PlayerDetails from './PlayerDetails';
-
+import FeaturedCarousel from './FeaturedCarousel';
 
 function HomePage({ onInventoryClick }) {
     const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -59,14 +59,14 @@ function HomePage({ onInventoryClick }) {
                 </div>
                 <div className="tf2-badge-progress">
                     <PlayerDetails
-                        name="Engineer Gaming"
-                        program="Computer Science"
-                        progress={75}
+                        name="Nathaniel Go"
+                        program="Systems Design Engineering @ U of Waterloo"
+                        progress={20}
                     />
                 </div>
                 <div className="tf2-featured">
                     <h2>Featured</h2>
-                    <div className="featured-content">[Featured Content]</div>
+                    <FeaturedCarousel />
                 </div>
                 <div className="tf2-friends">
                     <h2>Friends</h2>

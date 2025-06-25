@@ -69,15 +69,19 @@
   border-radius: 1vw;
   padding: 2vh 2vw;
   width: 100%;
-  max-width: 25vw;
+  max-width: 29vw;
   margin-bottom: 1vh;
+  /* Add these properties */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
 
 .tf2-featured h2, .tf2-friends h2 {
   margin-top: 0;
   margin-bottom: 1vh;
   font-size: 1.4rem;
-  font-family: Impact, Charcoal, sans-serif;
+  font-family: var(--tf2-primary-font);
 }
 
 .featured-content {
@@ -87,7 +91,7 @@
 }
 
 .friends-list {
-  min-height: 12vh;
+  min-height: 10vh;
   background: #7c4a03;
   border-radius: 0.6vw;
   padding: 1vh 1vw;
@@ -136,4 +140,83 @@
 .misc-btn {
   background: #7c4a03;
   color: #fff3c0;
+}
+
+.featured-carousel {
+  position: relative;
+  /* Update height to use relative units */
+  height: 12vh;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 0.6vw;
+  /* Add this to ensure it stays within parent */
+  box-sizing: border-box;
+}
+
+.carousel-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0.8rem;  /* Reduced padding */
+  background: #7c4a03;
+  color: #fff3c0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  font-family: var(--tf2-primary-font);
+}
+
+/* Adjust text sizes to be more compact */
+.carousel-item h3 {
+  margin: 0 0 0.3rem 0;
+  font-size: 1rem;
+}
+
+.carousel-item .item-quality,
+.carousel-item .item-subject {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  margin: 0.1rem 0;
+}
+
+.body {
+  font-family: var(--tf2-secondary-font);
+  /* ... rest of the styles ... */
+}
+
+.tf2-title {
+  font-family: var(--tf2-primary-font);
+  /* ... rest of the styles ... */
+}
+
+.tf2-btn {
+  font-family: var(--tf2-build-font);
+  /* ... rest of the styles ... */
+}
+
+/* In portfolio.css */
+.portfolio-title {
+  font-family: var(--tf2-primary-font);
+  /* ... rest of the styles ... */
+}
+
+/* In PlayerDetails.css */
+.player-name {
+  font-family: var(--tf2-primary-font);
+  /* ... rest of the styles ... */
+}
+
+h1, h2, .tf2-title {
+  font-family: var(--tf2-primary-font);
+}
+
+.player-program, .carousel-item p {
+  font-family: var(--tf2-secondary-font);
+}
+
+.tf2-btn, .footer-btn {
+  font-family: var(--tf2-build-font);
 }

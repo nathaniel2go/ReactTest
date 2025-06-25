@@ -31,7 +31,7 @@
 
 .player-name {
     color: #fff3c0;
-    font-family: Impact, Charcoal, sans-serif;
+    font-family: var(--tf2-primary-font);
     font-size: 1.4rem;
     margin: 0 0 4px 0;
 }

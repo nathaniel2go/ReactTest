@@ -1,3 +1,15 @@
+h1, h2, h3 {
+  font-family: var(--tf2-primary-font);
+}
+
+p, span, div {
+  font-family: var(--tf2-secondary-font);
+}
+
+button, input, select {
+  font-family: var(--tf2-build-font);
+}
+
 body {
   margin: 0;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -8,6 +20,45 @@ body {
   min-height: 100vh;
   background: #2b1d0e;
   color: #fff3c0;
+}
+
+.body {
+  font-family: var(--tf2-secondary-font);
+  /* ... rest of the styles ... */
+}
+
+.tf2-title {
+  font-family: var(--tf2-primary-font);
+  /* ... rest of the styles ... */
+}
+
+.tf2-btn {
+  font-family: var(--tf2-build-font);
+  /* ... rest of the styles ... */
+}
+
+/* In portfolio.css */
+.portfolio-title {
+  font-family: var(--tf2-primary-font);
+  /* ... rest of the styles ... */
+}
+
+/* In PlayerDetails.css */
+.player-name {
+  font-family: var(--tf2-primary-font);
+  /* ... rest of the styles ... */
+}
+
+h1, h2, .tf2-title {
+  font-family: var(--tf2-primary-font);
+}
+
+.player-program, .carousel-item p {
+  font-family: var(--tf2-secondary-font);
+}
+
+.tf2-btn, .footer-btn {
+  font-family: var(--tf2-build-font);
 }
 
 .tf2-header {
@@ -265,3 +316,4 @@ body {
   /* Optional: overlay for readability */
   position: relative;
 }
+

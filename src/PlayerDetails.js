@@ -5,7 +5,7 @@ function PlayerDetails({ name, program, progress }) {
     return (
         <div className="player-details">
             <div className="player-avatar">
-                <img src="/avatar-placeholder.png" alt="Player Avatar" />
+                <img src="/avatar.jpg" alt="Player Avatar" />
             </div>
             <div className="player-info">
                 <h3 className="player-name">{name}</h3>
@@ -17,7 +17,7 @@ function PlayerDetails({ name, program, progress }) {
                     >
                         <div className="progress-glow"></div>
                     </div>
-                    <span className="progress-text">{`${progress}% Complete`}</span>
+                    <span className="progress-text">{``}</span>
                 </div>
             </div>
         </div>
