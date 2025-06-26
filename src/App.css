@@ -63,10 +63,13 @@ h1, h2, .tf2-title {
 
 .tf2-header {
   background: #7c4a03;
-  padding: 24px 0 12px 0;
-  text-align: center;
+  padding: 2vh 5vh; /* Reduced padding */
   border-bottom: 6px solid #c97a1d;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
+
 
 .tf2-title {
   font-family: Impact, Charcoal, sans-serif;
@@ -144,7 +147,7 @@ h1, h2, .tf2-title {
 
 /* Portfolio styles */
 .portfolio-container {
-  background: #3b2a17;
+  background: #302424;
   border-radius: 10px;
   padding: 24px;
   max-width: 700px;

@@ -1,7 +1,13 @@
 /* ===== HEADER STYLES ===== */
 
-/* (Add your header styles here if you have any) */
-
+.tf2-header {
+  background: #302424;
+  padding: 1vh .5vh; /* Reduced padding */
+  border-bottom: 3px solid #787272;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
 /* ===== BODY STYLES ===== */
 
@@ -55,7 +61,7 @@
 }
 
 .player-details {
-  background: #7c4a03;
+  background: #302424;
   color: #fff3c0;
   padding: 1.5vh 4vw;
   border-radius: 0.8vw;
@@ -64,7 +70,7 @@
 }
 
 .tf2-featured, .tf2-friends {
-  background: #3b2a17;
+  background: #302424;
   color: #fff3c0;
   border-radius: 1vw;
   padding: 2vh 2vw;
@@ -134,7 +140,7 @@
 .footer-btn:hover,
 .footer-btn:focus {
   background: #e6b04a;
-  color: #2b1d0e;
+  color: #302424;
 }
 
 .misc-btn {
@@ -220,3 +226,26 @@ h1, h2, .tf2-title {
 .tf2-btn, .footer-btn {
   font-family: var(--tf2-build-font);
 }
+
+.site-icon-container {
+  cursor: pointer;
+  margin-left: 24px;
+  transition: transform 0.3s ease;
+}
+
+.site-icon-container:hover {
+  transform: scale(1.2);
+}
+
+.site-icon {
+  height: 5vh;
+  width: 5vh;
+  display: block;
+}
+
+/* Optional: add this if you want a smooth return to original size */
+.site-icon-container:active {
+  transform: scale(1);
+}
+
+

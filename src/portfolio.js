@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Header from './Header';
 import './portfolio.css';
 
 export const mockItems = [
@@ -60,25 +61,29 @@ function Portfolio() {
   const pagedItems = filtered.slice((page - 1) * itemsPerPage, page * itemsPerPage);
 
   return (
-    <div className="portfolio-container">
-      <div className="portfolio-header">
-        <h2 className="portfolio-title">Portfolio</h2>
-        <div className="portfolio-filters">
-          <select value={quality} onChange={e => setQuality(e.target.value)}>
-            {qualities.map(q => <option key={q} value={q}>{q}</option>)}
-          </select>
-          <select value={subject} onChange={e => setSubject(e.target.value)}>
-            {subjects.map(s => <option key={s} value={s}>{s}</option>)}
-          </select>
-        </div>
-        <input
-          className="portfolio-search"
-          type="text"
-          placeholder="Search by keyword..."
-          value={search}
-          onChange={e => setSearch(e.target.value)}
-        />
-        <button
+      <div className="portfolio-page">
+        <Header />
+        <div className="portfolio-container">
+          <div className="portfolio-header">
+            <h2 className="portfolio-title">Portfolio</h2>
+            <div className="portfolio-filters">
+              <select value={quality} onChange={e => setQuality(e.target.value)}>
+                {qualities.map(q => <option key={q} value={q}>{q}</option>)}
+              </select>
+              <select value={subject} onChange={e => setSubject(e.target.value)}>
+                {subjects.map(s => <option key={s} value={s}>{s}</option>)}
+              </select>
+            </div>
+            <input
+                className="portfolio-search"
+                type="text"
+                placeholder="Search by keyword..."
+                value={search}
+                onChange={e => setSearch(e.target.value)}
+            />
+          </div>
+
+          <button
           className="tf2-btn"
           style={{ marginLeft: 16 }}
           onClick={() => navigate('/')}

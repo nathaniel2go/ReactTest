@@ -23,7 +23,7 @@ function FeaturedCarousel() {
             gsap.to(items[currentIndex], {
                 opacity: 0,
                 x: '-100%',
-                duration: 0.75,
+                duration: 3,
                 ease: 'power2.inOut'
             });
 
