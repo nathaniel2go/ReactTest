@@ -203,30 +203,6 @@
   /* ... rest of the styles ... */
 }
 
-/* In portfolio.css */
-.portfolio-title {
-  font-family: var(--tf2-primary-font);
-  /* ... rest of the styles ... */
-}
-
-/* In PlayerDetails.css */
-.player-name {
-  font-family: var(--tf2-primary-font);
-  /* ... rest of the styles ... */
-}
-
-h1, h2, .tf2-title {
-  font-family: var(--tf2-primary-font);
-}
-
-.player-program, .carousel-item p {
-  font-family: var(--tf2-secondary-font);
-}
-
-.tf2-btn, .footer-btn {
-  font-family: var(--tf2-build-font);
-}
-
 .site-icon-container {
   cursor: pointer;
   margin-left: 24px;
@@ -247,5 +223,3 @@ h1, h2, .tf2-title {
 .site-icon-container:active {
   transform: scale(1);
 }
-
-

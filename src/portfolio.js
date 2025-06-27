@@ -32,6 +32,13 @@ export const mockItems = [
     subject: 'Data',
     keywords: ['python', 'ml', 'data']
   },
+  {
+    id: 5,
+    name: 'Project Gamma',
+    quality: 'Gold',
+    subject: 'Balls',
+    keywords: ['Suck', 'ml', 'Cokk']
+  },
   // Add more items as needed
 ];
 
@@ -48,15 +55,15 @@ function Portfolio() {
 
   // Filtering logic
   const filtered = mockItems.filter(item =>
-    (quality === 'All' || item.quality === quality) &&
-    (subject === 'All' || item.subject === subject) &&
-    (search === '' ||
-      item.name.toLowerCase().includes(search.toLowerCase()) ||
-      (item.keywords && item.keywords.some(k => k.toLowerCase().includes(search.toLowerCase()))))
+      (quality === 'All' || item.quality === quality) &&
+      (subject === 'All' || item.subject === subject) &&
+      (search === '' ||
+          item.name.toLowerCase().includes(search.toLowerCase()) ||
+          (item.keywords && item.keywords.some(k => k.toLowerCase().includes(search.toLowerCase()))))
   );
 
-  // Pagination logic (4x2 grid)
-  const itemsPerPage = 8;
+  // Pagination logic (4x3 grid)
+  const itemsPerPage = 12;
   const totalPages = Math.ceil(filtered.length / itemsPerPage);
   const pagedItems = filtered.slice((page - 1) * itemsPerPage, page * itemsPerPage);
 
@@ -84,54 +91,56 @@ function Portfolio() {
           </div>
 
           <button
-          className="tf2-btn"
-          style={{ marginLeft: 16 }}
-          onClick={() => navigate('/')}
-        >
-          Back to Home
-        </button>
-      </div>
-      <div className="portfolio-grid">
-        {pagedItems.map(item => (
-          <div
-            key={item.id}
-            className={`portfolio-item${selected === item.id ? ' selected' : ''}`}
-            onClick={() => setSelected(item.id)}
+              className="tf2-btn"
+              style={{ marginLeft: 16 }}
+              onClick={() => navigate('/')}
           >
-            <div className={`item-quality ${item.quality?.toLowerCase()}`}>{item.quality}</div>
-            <div className="item-name">{item.name}</div>
-            <div className="item-subject">{item.subject}</div>
+            Back to Home
+          </button>
+
+          <div className="portfolio-grid">
+            {pagedItems.map(item => (
+                <div
+                    key={item.id}
+                    className={`portfolio-item${selected === item.id ? ' selected' : ''}`}
+                    onClick={() => setSelected(item.id)}
+                >
+                  <div className={`item-quality ${item.quality?.toLowerCase()}`}>{item.quality}</div>
+                  <div className="item-name">{item.name}</div>
+                  <div className="item-subject">{item.subject}</div>
+                </div>
+            ))}
+            {Array.from({ length: itemsPerPage - pagedItems.length }).map((_, i) => (
+                <div key={`empty-${i}`} className="portfolio-item empty"></div>
+            ))}
           </div>
-        ))}
-        {Array.from({ length: itemsPerPage - pagedItems.length }).map((_, i) => (
-          <div key={`empty-${i}`} className="portfolio-item empty"></div>
-        ))}
+
+          <div className="portfolio-footer">
+            <button
+                className="portfolio-scroll"
+                onClick={() => setPage(p => Math.max(1, p - 1))}
+                disabled={page === 1}
+            >
+              &lt; Prev
+            </button>
+            <span className="portfolio-page">{page} / {totalPages || 1}</span>
+            <button
+                className="portfolio-scroll"
+                onClick={() => setPage(p => Math.min(totalPages, p + 1))}
+                disabled={page === totalPages || totalPages === 0}
+            >
+              Next &gt;
+            </button>
+            <button
+                className="portfolio-details"
+                disabled={selected === null}
+                onClick={() => alert(`Details for: ${mockItems.find(i => i.id === selected)?.name}`)}
+            >
+              Details
+            </button>
+          </div>
+        </div>
       </div>
-      <div className="portfolio-footer">
-        <button
-          className="portfolio-scroll"
-          onClick={() => setPage(p => Math.max(1, p - 1))}
-          disabled={page === 1}
-        >
-          &lt; Prev
-        </button>
-        <span className="portfolio-page">{page} / {totalPages || 1}</span>
-        <button
-          className="portfolio-scroll"
-          onClick={() => setPage(p => Math.min(totalPages, p + 1))}
-          disabled={page === totalPages || totalPages === 0}
-        >
-          Next &gt;
-        </button>
-        <button
-          className="portfolio-details"
-          disabled={selected === null}
-          onClick={() => alert(`Details for: ${mockItems.find(i => i.id === selected)?.name}`)}
-        >
-          Details
-        </button>
-      </div>
-    </div>
   );
 }
 

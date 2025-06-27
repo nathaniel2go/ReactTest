@@ -1,90 +1,245 @@
-/* HomePage.css */
-.tf2-home {
-  min-height: 100vh;
-  background: #2b1d0e;
-  color: #fff3c0;
+/* In portfolio.css */
+.portfolio-title {
+  font-family: var(--tf2-primary-font);
+  /* ... rest of the styles ... */
 }
 
-.tf2-title {
-  font-family: Impact, Charcoal, sans-serif;
-  font-size: 2.5rem;
-  letter-spacing: 2px;
-  color: #fff3c0;
-  margin: 0 0 10px 0;
-  text-shadow: 2px 2px 0 #000;
+/* In PlayerDetails.css */
+.player-name {
+  font-family: var(--tf2-primary-font);
+  /* ... rest of the styles ... */
 }
 
-.tf2-nav {
+h1, h2, .tf2-title {
+  font-family: var(--tf2-primary-font);
+}
+
+.player-program, .carousel-item p {
+  font-family: var(--tf2-secondary-font);
+}
+
+.tf2-btn, .footer-btn {
+  font-family: var(--tf2-build-font);
+}
+
+/* Portfolio styles */
+.portfolio-container {
+  background: #302424;
+  border-radius: 10px;
+  padding: 24px;
+  max-width: 700px;
+  margin: 40px auto;
+  box-shadow: 0 4px 16px #000a;
+}
+
+.portfolio-header {
   display: flex;
-  justify-content: center;
+  align-items: center;
   gap: 18px;
+  margin-bottom: 18px;
 }
 
-.tf2-btn {
+.portfolio-title {
+  margin: 0 18px 0 0;
+  font-size: 1.7rem;
+  color: #fff3c0;
+  font-family: Impact, Charcoal, sans-serif;
+}
+
+.portfolio-filters select {
+  margin-right: 8px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: none;
+  background: #c97a1d;
+  color: #fff3c0;
+  font-size: 1rem;
+}
+
+.portfolio-search {
+  margin-left: auto;
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: none;
+  font-size: 1rem;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 80px);
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.portfolio-item {
+  background: #7c4a03;
+  border-radius: 6px;
+  box-shadow: 1px 1px 0 #000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.2s, border 0.2s;
+  border: 2px solid transparent;
+}
+
+.portfolio-item.selected {
+  border: 2px solid #e6b04a;
+  background: #a86d1a;
+}
+
+.portfolio-item.empty {
+  background: transparent;
+  box-shadow: none;
+  cursor: default;
+  border: none;
+}
+
+.item-quality {
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+.item-quality.gold { color: #ffd700; }
+.item-quality.silver { color: #c0c0c0; }
+.item-quality.bronze { color: #cd7f32; }
+
+.item-name {
+  font-size: 1.1rem;
+  color: #fff3c0;
+}
+
+.item-subject {
+  font-size: 0.9rem;
+  color: #e6b04a;
+}
+
+.portfolio-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.portfolio-scroll {
   background: #c97a1d;
   color: #fff3c0;
   border: none;
-  padding: 12px 28px;
-  margin: 0 4px;
-  font-size: 1.1rem;
-  font-family: inherit;
-  border-radius: 6px;
+  padding: 6px 16px;
+  border-radius: 4px;
   cursor: pointer;
-  box-shadow: 2px 2px 0 #000;
-  transition: background 0.2s;
+  font-size: 1rem;
 }
 
-.tf2-btn:hover,
-.tf2-btn:focus {
+.portfolio-scroll:disabled {
+  background: #7c4a03;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+.portfolio-details {
   background: #e6b04a;
+  color: #2b1d0e;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.portfolio-details:disabled {
+  background: #7c4a03;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+.portfolio-page {
+  color: #fff3c0;
+  font-size: 1rem;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+  width: 100%;
+  max-width: 80vw;
+  margin: 0 auto;
+}
+
+.portfolio-item {
+  background: #302424;
+  border-radius: 8px;
+  padding: 15px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 150px;
+  border: 2px solid transparent;
+}
+
+.portfolio-item:hover {
+  transform: scale(1.02);
+}
+
+.portfolio-item.selected {
+  border-color: #c97a1d;
+}
+
+.portfolio-item.empty {
+  background: transparent;
+  cursor: default;
+}
+
+.item-quality {
+  font-size: 0.9rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+  width: fit-content;
+}
+
+.item-quality.gold {
+  background: #FFD700;
   color: #2b1d0e;
 }
 
-.main-btn {
-  font-weight: bold;
-  font-size: 1.2rem;
+.item-quality.silver {
+  background: #C0C0C0;
+  color: #2b1d0e;
 }
 
-.tf2-dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.tf2-dropdown-content {
-  display: block;
-  position: absolute;
-  left: 0;
-  top: 110%;
-  background: #7c4a03;
-  min-width: 180px;
-  box-shadow: 2px 2px 8px #000a;
-  border-radius: 6px;
-  z-index: 1;
-}
-
-.tf2-dropdown-content .tf2-btn {
-  display: block;
-  width: 100%;
-  margin: 0;
-  border-radius: 0;
-  text-align: left;
-  box-shadow: none;
-}
-
-.tf2-main {
-  margin: 48px auto 0 auto;
-  max-width: 600px;
-  text-align: center;
-  font-size: 1.3rem;
+.item-quality.bronze {
+  background: #CD7F32;
   color: #fff3c0;
 }
 
-.home-background {
-  min-height: 95vh;
-  min-width: 90vw;
-  background-image: url('/public/Background_2fort.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
+.item-name {
+  font-size: 1.1rem;
+  color: #fff3c0;
+  font-weight: bold;
 }
+
+.item-subject {
+  font-size: 0.9rem;
+  color: #e6b04a;
+}
+
+.portfolio-item.empty {
+  background: rgba(103, 103, 103, 0.3);
+  border: 2px dashed #302424;
+  cursor: default;
+}
+
+.portfolio-item.empty:hover {
+  transform: none;
+}
+
+
+
